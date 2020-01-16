@@ -137,6 +137,28 @@ and open the template in the editor.
                  
                    
                 </div>
+                
+                <div class="form-group row">
+   
+                    
+                      <label for="inputDeporte" class="col-sm-2 col-form-label">Selecciona tus aficiones</label>
+                      <div class="col-sm-10">
+                      <select id="inputDeporte" class="form-control" multiple name=sports[]>
+                          <option value = "1">Deporte al aire libre</option>
+                          <option value = "2">Deportes de aventuras</option>
+                          <option value = "3"> Musica Pop </option>
+                          <option value = "4"> Musica Rock </option>
+                          <option value = "5"> Musica alternativa </option>
+                          <option value = "6"> Fotografía </option>
+                          
+                          
+                      </select>
+                      </div>     
+
+                  </div>
+                
+                
+                
                 <div class="form-group row">
                   <div class="col-sm-10 text-center">
                     <button type="submit" class="btn btn-primary">Enviar</button>
