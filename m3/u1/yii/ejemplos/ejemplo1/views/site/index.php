@@ -2,16 +2,22 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+use \yii\helpers\Html;
+use yii\helpers\Url;
+$this->title = Yii::$app->name;
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Ejemplo numero 1</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">Trabajando aplicaciones en Yii2</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?=Url::to(['pelicula/index'])   ?>">Gestion de peliculas</a></p>
+        
+        <p>
+            <?= Html::a('Gestión de actores', ['actor/index'], ['class' => 'btn btn-lg btn-success']) ?>      
+        </p>
     </div>
 
     <div class="body-content">

@@ -140,6 +140,14 @@ class SiteController extends Controller
         
     }
     
+     public function actionPelicula()
+    {
+        return $this->render('peliculas');
+        
+    }
+    
+    
+    
     
     
 }

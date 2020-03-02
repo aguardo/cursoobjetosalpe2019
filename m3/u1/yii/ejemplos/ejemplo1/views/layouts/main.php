@@ -44,6 +44,7 @@ AppAsset::register($this);
             ['label' => 'Hola Mundo', 'url' => ['/site/hola']],
             ['label' => 'Mensaje', 'url' => ['/site/mensaje']],
             ['label' => 'Actor', 'url' => ['/actor']],
+            ['label' => 'Peliculas', 'url' => ['/site/pelicula']],
             
         ],
     ]);
@@ -61,9 +62,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">Desarrollado en clase de Programacion de Aplicaciones</p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">2020</p>
     </div>
 </footer>
 
