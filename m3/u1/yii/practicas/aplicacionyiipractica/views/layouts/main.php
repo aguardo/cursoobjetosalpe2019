@@ -40,8 +40,8 @@ AppAsset::register($this);
         'encodeLabels' => false,
         'items' => [
             ['label' =>  '<i class="glyphicon glyphicon-home"> </i> Inicio', 'url' => ['/site/index']],
-            ['label' => '<i class="glyphicon glyphicon-ok"> </i> Ofertas', 'url' => ['/site/about']],
-            ['label' => '<i class="glyphicon glyphicon-barcode"> </i> Productos', 'url' => ['/site/contact']],
+            ['label' => '<i class="glyphicon glyphicon-ok"> </i> Ofertas', 'url' => ['/site/ofertas']],
+            ['label' => '<i class="glyphicon glyphicon-barcode"> </i> Productos', 'url' => ['/site/productos']],
             ['label' => '<i class="glyphicon glyphicon-asterisk"> </i> Categorías', 'url' => ['/site/contact']],
             ['label' => '<i class="glyphicon glyphicon-user"> </i> Nosotros', 'url' => ['/site/contact']],
             ['label' => '<i class="glyphicon glyphicon-envelope"> </i> Contacto', 'url' => ['/site/contact']],

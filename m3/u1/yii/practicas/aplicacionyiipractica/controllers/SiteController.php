@@ -9,6 +9,10 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\ContactForm_1;
+use app\models\Productos;
+use yii\data\ActiveDataProvider;
+use yii\widgets\ListView;
 
 class SiteController extends Controller
 {
@@ -132,7 +136,26 @@ class SiteController extends Controller
         ]);
     }
         
+       
+    
+    
+    public function actionTemas()
+    {
+        
+        $model = new ContactForm_1();
+        
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['informacion'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+            return $this->refresh();
             
+        }
+        
+        return $this->render('temas', [
+            'model' => $model,
+        ]);
+    }
+    
+    
 
     /**
      * Displays about page.
@@ -146,15 +169,16 @@ class SiteController extends Controller
     }
     
     
-    /* Prueba acción correo 
+
     public function actionCorreo(){
         
-        $correo = new ContactForm();
+        $correo = new ContactForm_1();
         
-        $correo -> subject="Probando este rollo";
+        $correo -> temas="Productos";
         $correo -> body = "contenido Correo";
         $correo -> email ="aguardo@gmail.com";
-        $correo -> name = "Remitente";  
+        $correo -> name = "Remitente"; 
+        $correo -> surname = "Apellido";
 
         $correo -> contact(Yii::$app->params["informacion"]);
                 
@@ -162,5 +186,40 @@ class SiteController extends Controller
         
     }
 
-     */
+    public function actionProductos(){
+        
+        $dataProvider = new ActiveDataProvider([
+            'query' => Productos::find(),
+            'pagination' => [
+            'pageSize' => 2,
+             ],
+        ]);
+        
+       return $this->render('productos', [
+            'dataProvider' => $dataProvider,
+        ]);
+                
+        
+        
+    }
+    
+    public function actionOfertas(){
+        
+        $dataProvider = new ActiveDataProvider([
+            'query' => Productos::find()->where(['oferta' => 1]),
+            'pagination' => [
+            'pageSize' => 2,
+             ],
+        ]);
+        
+       return $this->render('productos', [
+            'dataProvider' => $dataProvider,
+        ]);
+                
+        
+        
+    }
+    
+    
+    
 }
